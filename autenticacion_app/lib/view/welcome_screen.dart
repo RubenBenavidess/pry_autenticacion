@@ -7,7 +7,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthService>(
+    return Consumer<AuthViewModel>(
       builder: (context, authService, child) {
         final user = authService.user;
         final userModel = authService.userModel;
@@ -338,7 +338,7 @@ class WelcomeScreen extends StatelessWidget {
 
   Widget _buildDrawer(
     BuildContext context,
-    AuthService authService,
+    AuthViewModel authService,
     userModel,
   ) {
     final user = authService.user;
@@ -426,7 +426,7 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 
-  void _showLogoutDialog(BuildContext context, AuthService authService) {
+  void _showLogoutDialog(BuildContext context, AuthViewModel authService) {
     showDialog(
       context: context,
       builder: (BuildContext context) {

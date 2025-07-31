@@ -9,7 +9,7 @@ class AuthWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthService>(
+    return Consumer<AuthViewModel>(
       builder: (context, authService, child) {
         if (authService.isLoggedIn) {
           return WelcomeScreen();

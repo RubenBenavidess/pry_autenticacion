@@ -30,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
-          child: Consumer<AuthService>(
+          child: Consumer<AuthViewModel>(
             builder: (context, authService, child) {
               return Form(
                 key: _formKey,
@@ -213,7 +213,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void _handleRegister() async {
     if (_formKey.currentState!.validate()) {
-      final authService = Provider.of<AuthService>(context, listen: false);
+      final authService = Provider.of<AuthViewModel>(context, listen: false);
       bool success = await authService.signUp(
         _emailController.text.trim(),
         _passwordController.text.trim(),

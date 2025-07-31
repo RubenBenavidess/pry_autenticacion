@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Center(
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Consumer<AuthService>(
+            child: Consumer<AuthViewModel>(
               builder: (context, authService, child) {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -264,7 +264,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _handleLogin() async {
     if (_formKey.currentState!.validate()) {
-      final authService = Provider.of<AuthService>(context, listen: false);
+      final authService = Provider.of<AuthViewModel>(context, listen: false);
       await authService.signIn(
         _emailController.text.trim(),
         _passwordController.text.trim(),

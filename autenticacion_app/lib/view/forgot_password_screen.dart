@@ -26,7 +26,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Consumer<AuthService>(
+          child: Consumer<AuthViewModel>(
             builder: (context, authService, child) {
               return _emailSent
                   ? _buildSuccessMessage()
@@ -38,7 +38,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     );
   }
 
-  Widget _buildForm(AuthService authService) {
+  Widget _buildForm(AuthViewModel authService) {
     return Form(
       key: _formKey,
       child: Column(
@@ -207,7 +207,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   void _handlePasswordReset() async {
     if (_formKey.currentState!.validate()) {
-      final authService = Provider.of<AuthService>(context, listen: false);
+      final authService = Provider.of<AuthViewModel>(context, listen: false);
       bool success = await authService.sendPasswordResetEmail(
         _emailController.text.trim(),
       );

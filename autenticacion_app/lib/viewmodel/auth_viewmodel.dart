@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../model/user_model.dart';
 
-class AuthService extends ChangeNotifier {
+class AuthViewModel extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -19,7 +19,7 @@ class AuthService extends ChangeNotifier {
   String? get error => _error;
   bool get isLoggedIn => _user != null;
 
-  AuthService() {
+  AuthViewModel() {
     _auth.authStateChanges().listen(_onAuthStateChanged);
   }
 
