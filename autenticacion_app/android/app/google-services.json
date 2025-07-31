@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "809687675147",
+    "project_id": "prueba-p3-d2cda",
+    "storage_bucket": "prueba-p3-d2cda.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809687675147:android:e8076b4f0b66f78f48720e",
+        "android_client_info": {
+          "package_name": "com.espe.prueba"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyWo20eieNqzY2ckbJl0vzTqIIDc6Z_mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
